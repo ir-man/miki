@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+svg	{
+	width: 900px;
+	height: 500px;
+}
+
+/*------------------------*/
+
+#eyes {
+  animation: eyes 3.5s ease-out infinite ;
+  animation-delay: -1s ;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#eyebrow {
+  animation: eyebrow 3.5s ease-out infinite ;
+  animation-delay: -1s ;
+}
+#bg {
+	cursor: pointer;
+}
+#miki {
+	transition: 1.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+#miki.active {
+	transform: translateY(-100px);
+}
+#mouth {
+	transition: 0.5s;
+	transition-delay: 1.2s;
+	opacity: 0%;
+	transform: scaleY(0);
+	transform-origin: center;	
+    transform-box: fill-box;
+}
+#mouth.active {
+	opacity: 100%;
+	transform: scale(0.9) scaleY(1.0);
+}
+#ongr1, #ongr2 {
+	transition: 2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	transform-origin: center;	
+    transform-box: fill-box;
+}
+#ongr1.active {
+	transform: translateY(-100px) rotateZ(360deg);
+	animation: onigiri 2s ease-in-out;
+	animation-delay: 2s;
+	
+}
+#ongr2.active {
+	transform: translateY(-100px) rotateZ(360deg);
+	animation: onigiri 2s ease-in-out;
+	animation-delay: 2s;	
+}
+
+/*------------------------*/
+
+@keyframes eyes {
+  0%{transform: scaleY(1) }
+  85%{transform: scaleY(1) }
+  90%{transform:  scaleY(0.1)  translateY(3px) }
+  100%{transform: scaleY(1) }
+}
+@keyframes eyebrow {
+  0%{transform: translateY(0px) }
+  85%{transform:  translateY(0px) }
+  90%{transform: translateY(5px) }
+  100%{transform: translateY(0px) }
+}
+@keyframes onigiri {
+  0%{transform: translateY(-100px) }
+  50%{transform: translateY(-110px) }
+  100%{transform: translateY(-100px) }
+}
